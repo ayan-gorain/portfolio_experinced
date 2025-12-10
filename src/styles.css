@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 /* Navbar link animation */
+html,
+body {
+  min-height: 100%;
+  background-color: #000; /* pure black */
+  margin: 0;
+  padding: 0;
+}
+
+
 .nav-link {
   @apply text-slate-300 hover:text-white transition-colors duration-300;
 }
