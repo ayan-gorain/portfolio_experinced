@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,14 +8,24 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
-  startDate = new Date(2025, 6); // July 2025 (month is 0-based)
+   startDate = new Date(2025, 6); // July 2025
 
   get experienceMonths(): number {
     const now = new Date();
-    const months =
+    return (
       (now.getFullYear() - this.startDate.getFullYear()) * 12 +
-      (now.getMonth() - this.startDate.getMonth());
-    return months < 0 ? 0 : months;
+      (now.getMonth() - this.startDate.getMonth())
+    );
+  }
+
+  isResumeOpen = signal(false);
+
+  openResume() {
+    this.isResumeOpen.set(true);
+  }
+
+  closeResume() {
+    this.isResumeOpen.set(false);
   }
 
 }

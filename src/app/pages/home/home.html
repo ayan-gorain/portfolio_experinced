@@ -24,7 +24,7 @@
         scalable components, and maintainable codebases.
       </p>
 
-      <div class="mt-8 flex gap-4">
+      <div class="mt-8 flex flex-wrap gap-4">
         <a
           routerLink="/projects"
           class="px-6 py-2 rounded-full
@@ -40,6 +40,15 @@
                  hover:border-slate-500 transition">
           Contact Me
         </a>
+
+        <button
+          (click)="openResume()"
+          class="px-6 py-2 rounded-full
+                 border border-emerald-500 text-emerald-400
+                 hover:bg-emerald-500 hover:text-slate-900
+                 transition">
+          View Resume
+        </button>
       </div>
     </div>
 
@@ -54,25 +63,27 @@
       </h3>
 
       <!-- TIMELINE -->
-      <div class="relative pl-6">
+      <div class="relative">
 
-        <!-- VERTICAL LINE -->
+        <!-- VERTICAL BAR -->
         <div
-          class="absolute left-2 top-0 bottom-0
-                 w-px bg-slate-700">
+          class="absolute left-[7px] top-0 bottom-0
+                 w-[2px] bg-slate-700">
         </div>
 
         <!-- EXPERIENCE ITEM -->
-        <div class="relative mb-6">
+        <div class="relative flex gap-4 pb-6">
+
           <!-- DOT -->
           <div
-            class="absolute -left-[5px] top-1.5
-                   w-3 h-3 rounded-full
-                   bg-emerald-500">
+            class="relative z-10
+                   w-4 h-4 rounded-full
+                   bg-emerald-500
+                   ring-4 ring-slate-900">
           </div>
 
           <!-- CONTENT -->
-          <div class="ml-4">
+          <div>
             <p class="text-slate-200 font-medium">
               Associate Engineer — Frontend
             </p>
@@ -81,15 +92,83 @@
               Ascendion
             </p>
 
-            <p class="text-sm text-slate-400">
+            <p class="text-sm text-slate-500">
               July 2025 – Present · {{ experienceMonths }} months
             </p>
           </div>
         </div>
 
       </div>
+
     </div>
 
   </div>
-
 </section>
+
+
+<!-- ================= RESUME MODAL ================= -->
+
+@if (isResumeOpen()) {
+  <div
+    class="fixed inset-0 z-50
+           flex items-center justify-center
+           bg-black/70 backdrop-blur">
+
+    <!-- MODAL BOX -->
+    <div
+      class="bg-slate-900 border border-slate-800
+             rounded-xl
+             w-[90%] max-w-4xl
+             h-[85%]
+             flex flex-col">
+
+      <!-- HEADER -->
+      <div
+        class="flex items-center justify-between
+               px-6 py-4 border-b border-slate-800">
+        <h3 class="text-lg font-medium">
+          Resume
+        </h3>
+
+        <button
+          (click)="closeResume()"
+          class="text-slate-400 hover:text-white text-xl">
+          ✕
+        </button>
+      </div>
+
+      <!-- PDF VIEW -->
+      <div class="flex-1 overflow-hidden">
+        <iframe
+  src="assets/Ayan_Gorain_Resume.pdf"
+  class="w-full h-full"
+  frameborder="0">
+</iframe>
+
+      </div>
+
+      <!-- FOOTER ACTIONS -->
+      <div
+        class="px-6 py-4 border-t border-slate-800
+               flex justify-end gap-4">
+        <a
+          href="assets/Ayan_Gorain_Resume.pdf"
+          download
+          class="px-5 py-2 rounded-lg
+                 bg-emerald-500 text-slate-900
+                 font-medium hover:bg-emerald-400 transition">
+          Download Resume
+        </a>
+
+        <button
+          (click)="closeResume()"
+          class="px-5 py-2 rounded-lg
+                 border border-slate-700
+                 hover:border-slate-500 transition">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+}

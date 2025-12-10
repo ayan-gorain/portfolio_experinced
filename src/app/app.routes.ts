@@ -37,11 +37,6 @@ export const routes: Routes = [
       import('./core/navbar/navbar')
         .then(m => m.Navbar),
   },
-  {
-    path:'footer',
-    loadComponent: () =>
-      import('./core/footer/footer')
-        .then(m => m.Footer),   
-  }
+  
 
 ];
