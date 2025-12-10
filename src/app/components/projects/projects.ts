@@ -34,7 +34,7 @@ projects: Project[] = [
       title: 'Insurance Management Tool',
       description:
         'Web app for managing insuarnce, filtering, and admin controls.',
-      tech: ['Angular', 'Firebase', 'Tailwind CSS'],
+      tech:  ['Angular', 'TypeScript', 'GraphQL', 'Node.js', 'MongoDB'],
       github: 'https://github.com/ayan-gorain/insurancecapstone',
       demo: 'https://insurancecapstone.vercel.app/',
     },

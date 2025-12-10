@@ -25,12 +25,7 @@ export const routes: Routes = [
       import('./components/skills/skills')
         .then(m => m.Skills),
   },
-  {
-    path:'hero',
-    loadComponent: () =>
-      import('./components/hero/hero')
-        .then(m => m.Hero),
-  },
+
   {
     path:'navbar',
     loadComponent: () =>
