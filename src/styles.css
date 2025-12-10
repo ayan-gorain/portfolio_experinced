@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Navbar link animation */
+.nav-link {
+  @apply text-slate-300 hover:text-white transition-colors duration-300;
+}
+
+/* Underline animation */
+.nav-underline {
+  @apply absolute left-0 -bottom-1
+         h-[2px] w-full
+         bg-emerald-400
+         scale-x-0 origin-left
+         transition-transform duration-300
+         group-hover:scale-x-100;
+}
+
+/* Mobile links */
+.mobile-link {
+  @apply block text-slate-300 hover:text-white
+         transition-all duration-200
+         hover:translate-x-1;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.25s ease-out;
+}
+/* Footer links */
+.footer-link {
+  @apply text-slate-400 hover:text-white
+         transition-all duration-300
+         hover:translate-x-1;
+}

@@ -1,0 +1,65 @@
+<section class="pt-16 pb-20 bg-slate-950">
+
+  <!-- CENTER CARD -->
+  <div
+    class="max-w-5xl mx-auto
+           bg-slate-900
+           border border-slate-800
+           rounded-2xl
+           px-8 py-12 sm:px-10 sm:py-14">
+
+    <!-- TITLE -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+        What I do
+      </h2>
+
+      <p class="mt-4 text-slate-400 max-w-2xl mx-auto">
+        I build clean, maintainable web applications using modern
+        frontend frameworks and reliable backend technologies.
+      </p>
+    </div>
+
+    <!-- SKILLS GRID -->
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5
+             gap-8">
+
+      @for (skill of skills; track skill.name) {
+        <div
+          class="flex flex-col items-center gap-3
+                 text-slate-300
+                 transition-all duration-300
+                 hover:-translate-y-1
+                 hover:text-emerald-300">
+
+          <!-- ICON CONTAINER -->
+          <div
+            class="h-14 w-14
+                   flex items-center justify-center
+                   rounded-xl
+                   bg-slate-800
+                   border border-slate-700
+                   transition-colors
+                   hover:border-emerald-500/40">
+
+            <img
+              [src]="'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/' +
+                      skill.icon + '/' + skill.icon + '-original.svg'"
+              [alt]="skill.name"
+              class="h-8 w-8" />
+          </div>
+
+          <!-- LABEL -->
+          <span class="text-sm font-medium">
+            {{ skill.name }}
+          </span>
+
+        </div>
+      }
+
+    </div>
+
+  </div>
+
+</section>

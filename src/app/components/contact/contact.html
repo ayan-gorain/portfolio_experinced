@@ -1,0 +1,83 @@
+<section class="pt-16 pb-20 bg-slate-950">
+
+  <!-- HEADER -->
+  <div class="max-w-4xl mx-auto px-6 mb-14">
+    <h2 class="text-3xl font-bold tracking-tight">
+      Contact
+    </h2>
+
+    <p class="mt-4 text-slate-400 max-w-xl">
+      I’m open to discussing opportunities, projects, or collaborations.
+      Feel free to reach out through any of the platforms below.
+    </p>
+  </div>
+
+  <!-- CONTACT CARD -->
+  <div class="max-w-4xl mx-auto px-6">
+    <div
+      class="bg-slate-900 border border-slate-800
+             rounded-2xl p-8
+             grid gap-6">
+
+      <!-- EMAIL -->
+      <div class="flex items-center gap-4">
+        <div
+          class="h-10 w-10 flex items-center justify-center
+                 rounded-lg bg-slate-800 text-emerald-400">
+          ✉
+        </div>
+
+        <div>
+          <p class="text-sm text-slate-400">Email</p>
+          <a
+            [href]="'mailto:' + email"
+            class="text-slate-200 hover:text-emerald-300 transition">
+            {{ email }}
+          </a>
+        </div>
+      </div>
+
+      <!-- GITHUB -->
+      <div class="flex items-center gap-4">
+        <div
+          class="h-10 w-10 flex items-center justify-center
+                 rounded-lg bg-slate-800 text-slate-300">
+          GH
+        </div>
+
+        <div>
+          <p class="text-sm text-slate-400">GitHub</p>
+          <a
+            [href]="github"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-200 hover:text-emerald-300 transition">
+            {{ github }}
+          </a>
+        </div>
+      </div>
+
+      <!-- LINKEDIN -->
+      <div class="flex items-center gap-4">
+        <div
+          class="h-10 w-10 flex items-center justify-center
+                 rounded-lg bg-slate-800 text-sky-400">
+          in
+        </div>
+
+        <div>
+          <p class="text-sm text-slate-400">LinkedIn</p>
+          <a
+            [href]="linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-200 hover:text-emerald-300 transition">
+            {{ linkedin }}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,98 @@
+<header
+  class="fixed top-0 left-0 right-0 z-50
+         bg-slate-950/80 backdrop-blur
+         border-b border-slate-800
+         transition-colors duration-300">
+
+  <nav
+    class="max-w-6xl mx-auto px-6 h-16
+           flex items-center justify-between">
+
+    <!-- LOGO -->
+    <a
+      routerLink="/"
+      class="text-lg font-semibold tracking-wide
+             flex items-center gap-1
+             group transition-colors duration-300">
+      <span class="text-slate-100 group-hover:text-white">
+        Ayan
+      </span>
+      <span
+        class="text-emerald-400 group-hover:text-emerald-300
+               transition-colors duration-300">
+        .
+      </span>
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <ul class="hidden md:flex gap-10 text-sm text-slate-300">
+
+      <li class="relative group">
+        <a routerLink="/" class="nav-link">Home</a>
+        <span class="nav-underline"></span>
+      </li>
+
+      <li class="relative group">
+        <a routerLink="/projects" class="nav-link">Projects</a>
+        <span class="nav-underline"></span>
+      </li>
+
+      <li class="relative group">
+        <a routerLink="/skills" class="nav-link">Skills</a>
+        <span class="nav-underline"></span>
+      </li>
+
+      <li class="relative group">
+        <a routerLink="/contact" class="nav-link">Contact</a>
+        <span class="nav-underline"></span>
+      </li>
+
+    </ul>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button
+      class="md:hidden text-slate-300 hover:text-white
+             transition-transform duration-200
+             active:scale-90"
+      (click)="toggleMenu()">
+      ☰
+    </button>
+
+  </nav>
+
+  <!-- MOBILE MENU (Animated) -->
+  @if (isOpen()) {
+    <div
+      class="md:hidden overflow-hidden
+             bg-slate-950 border-t border-slate-800
+             animate-slideDown">
+
+      <ul class="px-6 py-6 space-y-5 text-slate-300 text-sm">
+        <li>
+          <a routerLink="/" (click)="toggleMenu()"
+             class="mobile-link">
+            Home
+          </a>
+        </li>
+        <li>
+          <a routerLink="/projects" (click)="toggleMenu()"
+             class="mobile-link">
+            Projects
+          </a>
+        </li>
+        <li>
+          <a routerLink="/skills" (click)="toggleMenu()"
+             class="mobile-link">
+            Skills
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" (click)="toggleMenu()"
+             class="mobile-link">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  }
+</header>
